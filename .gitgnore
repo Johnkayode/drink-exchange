@@ -1,0 +1,6 @@
+.dist/
+# Environments
+.env
+.venv
+env/
+
