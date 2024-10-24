@@ -11,3 +11,8 @@ DATABASES = {
         'PORT': config('POSTGRES_PORT'),
     }
 }
+
+# email
+# EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+# DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL", default="thewkndproject@gmail.com")
+# SUPPORT_EMAIL = config("SUPPORT_EMAIL", default="thewkndproject@gmail.com")
