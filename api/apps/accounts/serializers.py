@@ -36,7 +36,7 @@ class BusinessRegisterSerializer(dj_rest_auth_registration_serializers.RegisterS
     last_name = serializers.CharField(required=True)
     business_name = serializers.CharField(required=True)
     phone_number = PhoneNumberField(required=False)
-    account_type = serializers.HiddenField(default=AccountType.COMPANY_ADMIN)
+    account_type = serializers.HiddenField(default=AccountType.BUSINESS_ADMIN)
     password = serializers.CharField(write_only=True, required=True)
  
 
@@ -86,7 +86,6 @@ class BusinessRegisterSerializer(dj_rest_auth_registration_serializers.RegisterS
             user.business = business
             user.save(update_fields=["business"])
     
-
 
 class TokenSerializer(DjRestAuthTokenSerializer):
     class Meta(DjRestAuthTokenSerializer.Meta):

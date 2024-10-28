@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     # local apps
     'api.apps.base',
     'api.apps.accounts',
+    'api.apps.products',
 
 ]
 

@@ -10,8 +10,8 @@ from api.apps.base.models import BaseModel
 
 
 class AccountType(models.TextChoices):
-    COMPANY_ADMIN = "company_admin", _("Company Admin")
-    COMPANY_STAFF = "company_staff", _("Company Staff")
+    BUSINESS_ADMIN = "business_admin", _("Business Admin")
+    BUSINESS_STAFF = "business_staff", _("Business Staff")
     CUSTOMER = "customer", _("Customer")
   
 
@@ -28,7 +28,7 @@ class Business(BaseModel):
         ordering = ("-created_at",)
 
     def __str__(self):
-        return self.business_name
+        return self.name
 
 
 class User(AbstractUser):
