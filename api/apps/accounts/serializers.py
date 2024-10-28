@@ -39,6 +39,11 @@ class BusinessRegisterSerializer(dj_rest_auth_registration_serializers.RegisterS
     account_type = serializers.HiddenField(default=AccountType.COMPANY_ADMIN)
     password = serializers.CharField(write_only=True, required=True)
  
+
+    def validate(self, data):
+        """ override password1/password2 validation """
+        return data
+    
     def validate_username(self, username):
         pass
 
@@ -57,6 +62,7 @@ class BusinessRegisterSerializer(dj_rest_auth_registration_serializers.RegisterS
                 "A user with this phone number already exists", "invalid"
             )
         return phone_number
+
 
 
     def get_cleaned_data(self):
